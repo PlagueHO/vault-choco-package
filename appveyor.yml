@@ -1,0 +1,31 @@
+#---------------------------------#
+#      environment configuration  #
+#---------------------------------#
+version: 0.6
+
+configuration: Release
+
+platform: Any CPU
+
+#---------------------------------#
+#      build configuration        #
+#---------------------------------#
+
+build_script:
+
+#---------------------------------#
+#      test configuration         #
+#---------------------------------#
+
+#---------------------------------#
+#      deployment configuration   #
+#---------------------------------#
+
+deploy_script:
+  - ps: |
+      # Create Chocolately Package
+
+      Set-Location -Path .\vault.portable\
+      (Get-Content '.\vault.portable.nuspec' -Raw).Replace("<version>1.0</version>", "<version>$($env:APPVEYOR_BUILD_VERSION)</version>") | Out-File '.\vault.portable.nuspec'
+      cpack
+      Push-AppveyorArtifact ".\vault.portable.$($ENV:APPVEYOR_BUILD_VERSION).nupkg"

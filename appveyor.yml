@@ -3,10 +3,6 @@
 #---------------------------------#
 version: 0.6.{build}
 
-configuration: Release
-
-platform: Any CPU
-
 #---------------------------------#
 #      build configuration        #
 #---------------------------------#

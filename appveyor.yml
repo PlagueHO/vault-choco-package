@@ -11,8 +11,6 @@ platform: Any CPU
 #      build configuration        #
 #---------------------------------#
 
-build_script:
-
 #---------------------------------#
 #      test configuration         #
 #---------------------------------#

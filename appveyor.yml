@@ -21,5 +21,5 @@ deploy_script:
 
       Set-Location -Path .\vault.portable\
       (Get-Content '.\vault.portable.nuspec' -Raw).Replace("<version>1.0</version>", "<version>$($env:APPVEYOR_BUILD_VERSION)</version>") | Out-File '.\vault.portable.nuspec'
-      cpack
+      Choco Pack
       Push-AppveyorArtifact ".\vault.portable.$($ENV:APPVEYOR_BUILD_VERSION).nupkg"

@@ -7,6 +7,9 @@ version: 0.6.{build}
 #      build configuration        #
 #---------------------------------#
 
+build_script:
+  - ps: Write-Output "No build required."
+
 #---------------------------------#
 #      test configuration         #
 #---------------------------------#
